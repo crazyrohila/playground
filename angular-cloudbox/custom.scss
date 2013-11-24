@@ -1,0 +1,64 @@
+
+/**
+ * Keyframe and animation loop.
+ */
+/*@for $i from 1 to 4 {
+  @keyframes move#{$i} {
+  0%, 100% { transform: translate(0, 0) rotate(#{($i*17)}deg); }
+    50% { transform: translate(20px, 2px) }
+    50% { transform: translate(22px, 20px) }
+    75% { transform: translate(2px, 22px) }
+  }
+  p:nth-child(#{$i}) {
+    animation: move#{$i} #{$i}s infinite;
+    transform-origin: 20px 20px;
+  }
+}*/
+
+@for $i from 1 to 8 {
+  @keyframes move#{$i} {
+  0%, 100% { transform: translate(0, 0) rotate(#{($i*37)}deg); }
+50% { transform: translate(#{($i*1)+10}px, 2px) }
+    50% { transform: translate(#{($i*2)+10}px, #{($i*1)+10}px) }
+    75% { transform: translate(2px, #{($i*2)+10}px) }
+  }
+  .cloud p:nth-child(3n+#{$i}) {
+    animation: move#{$i} 2s infinite;
+    transform-origin: #{($i*4)+20}px #{($i*4)+20}px;
+  }
+}
+
+.cloud p:last-of-type {
+  top: 10%;
+  left: 10%;
+  color: #008008;
+}
+
+/**
+ * Some Basic styling.
+ */
+
+input[type="text"] {
+  height: 20px;
+  font-size: 20%;
+}
+
+.ng-binding {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.cloud {
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20%;
+  background: white;
+  box-shadow: 25px -15px 5px black, 15px -15px 15px silver inset, 24px 3px 5px black;
+  overflow: hidden;
+  p {
+    padding: 10px;
+    position: absolute;
+  }
+}

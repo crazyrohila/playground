@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortlink" href="http://www.crazyrohila.com/" />
+  <link rel="canonical" href="http://www.crazyrohila.com/" />
+  <meta name="abstract" content="Resize to cover" />
+  <meta name="description" content="A Simple jquery function to resize and fit image in parent element like background cover." />
+  <meta name="keywords" content="resizetocover, background-cover, jquery" />
+  <link rel="author" href="https://plus.google.com/110811569558191168059/posts">
+
+  <title>Resize to Cover | Sanjay Rohila</title>
+
+  <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+  <link rel="stylesheet" src="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css" />
+  <link rel="stylesheet" href="custom.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+  <script src="jquery.resizetocover.min.js"></script>
+  <script>
+    $(window).load(function() {
+      $('.imgresize img').resizeToCover();
+    });
+    $(window).resize(function() {
+      $('.imgresize img').resizeToCover();
+    });
+  </script>
+
+</head>
+<body>
+<h1><\img> as background cover.</h1>
+<div class="desc">When creating a responsive site, sometime we require a image to fit in a div. We can set max-width: 100%; OR width: 100%; with auto height for this. But when resize window image doesn't fit all the way in div. Image miss the height part of div to maintain aspect ratio <span>(resize browser window and check first image)</span>. To solve this problem we can use background-size: cover; property in css. background size maintains the aspect ratio and cover div all the way <span>(check second image)</span>. But We cannot use background in place of image. So <a href="https://raw.github.com/crazyrohila/resizetocover/gh-pages/jquery.resizetocover.min.js" title="Download" class="download" target="_blank">Here</a> is a tiny jquery function to make image behave like background cover in div. Thanks to <span>http://stackoverflow.com/questions/10797632/simulate-background-sizecover-on-video-or-img#answer-11559652</span>. To Use this, Select the image and call function. eg. <code>$('.imgresize img').resizeToCover();</code></div>
+
+<div class="wrpr">
+  <h2>Comparison between these three approaches.</h2>
+  <h3>1. Using max-width: 100%; to image.</h3>
+  <div class="mxwd wrpr__ctnr">
+    <img src="http://s23.postimg.org/vw2392j9n/168894_180213315345828_100000714824907_438939_66.jpg" />
+  </div>
+  <h3>2. image as background on div.</h3>
+  <div class="bgcover wrpr__ctnr"></div>
+  <h3>3. Image resized to behave like background cover.</h3>
+  <div class="imgresize wrpr__ctnr">
+    <img src="http://s23.postimg.org/vw2392j9n/168894_180213315345828_100000714824907_438939_66.jpg" />
+  </div>
+  <p></p>
+</div>
+<div class="resize-me">Resize Me</div>
+
+</body>
+</html>

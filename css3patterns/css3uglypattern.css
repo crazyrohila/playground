@@ -1,0 +1,83 @@
+/**
+ * linear-gradient backgrounds.
+ */
+
+body {
+  background: #e8eff5;
+  position: relative;
+}
+
+p {
+font-style:italic;
+text-align:center;
+}
+
+h1 {
+  color: #e50;
+  text-align: center;
+  font-size: 4em;
+  margin: 0;
+}
+
+small {
+  font-size: 0.22em;
+}
+
+.gallary-container {
+  box-sizing: border-box;
+  max-width: 1160px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.pattern {
+width: 300px;
+height: 300px;
+float: left;
+border-radius: 50%;
+margin: 10px;
+position: relative;
+background-clip: padding-box;
+box-sizing: border-box;
+border: 15px solid rgba(6,6,66,0.2);
+background: transparent;
+background-repeat: repeat;
+}
+#b1 {
+background-image: linear-gradient(45deg, red 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%);
+background-size: 20px 20px;
+}
+#b2 {
+background-image: linear-gradient(60deg, red 50%, green 50%);
+background-size: 20px 20px;
+}
+#b3 {
+background-image: linear-gradient(-45deg, white 50%, #008080 50%);
+background-size: 20px 20px;
+}
+#b4 {
+background-image: linear-gradient(50deg, white, #008080);
+background-size: 20px 20px;
+}
+#b5 {
+background-color: teal;
+background-image: linear-gradient(60deg, transparent, #008080, transparent 10px, #fff);
+background-size: 5px 5px;
+}
+#b6 {
+background-image: linear-gradient(45deg, green, transparent 11px, #000);
+background-size: 10px 10px;
+}
+#b7 {
+background-image: linear-gradient(30deg, #0000e0, #e00000);
+background-size: 30px 30px;
+}
+#b8 {
+background-color: #fff;
+background-image: linear-gradient(60deg, transparent, #666, transparent 50px, white);
+background-size: 5px 5px;
+}

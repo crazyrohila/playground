@@ -1,4 +1,4 @@
 playground
 ==========
 
-some experiments/projects hosted on github
+some experiments/projects.
