@@ -3,16 +3,95 @@
  */
 
 body {
-  overflow-x: hidden;
+  font: normal 18px/30px "Georgia Pro",georgia,serif;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  margin: 10px auto;
+  padding: 0 20px;
+  max-width: 1280px;
+}
+
+.header {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 4px solid #e6e6e6;
+}
+
+.logo {
+  text-align: center;
+}
+.logo .logo__link {
+  display: inline-block;
+  padding: 10px;
+  border: 3px solid #cccccc;
+  border-radius: 50%;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+.site__name {
+  margin: 10px 0;
+  text-align: center;
+}
+.site__name a {
+  color: indianred;
+  text-decoration: none;
+}
+.site__name a:hover, .site__name a:focus {
+  outline: 0;
+}
+
+.site__desc {
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+.meta {
+  margin: 0;
+  margin: 10px 0;
+  color: #b3b3b3;
+}
+
+.footer {
+  overflow: hidden;
+  margin-top: 40px;
+  border-top: 4px solid #e6e6e6;
+  color: #666666;
+  font-size: 80%;
+}
+.footer .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer .menu__item {
+  display: inline-block;
+  padding: 5px 10px;
+}
+.footer .menu__item:nth-child(1) {
+  padding-left: 0;
+}
+.footer .menu__links {
+  color: indianred;
+  text-decoration: none;
+  padding: 1px 0;
+  cursor: pointer;
+}
+.footer .menu__links:hover, .footer .menu__links:focus {
+  color: black;
 }
 
 .projects {
-  box-sizing: border-box;
-  max-width: 1280px;
-  padding: 0 20px;
-  width: 100%;
-  margin: 0 auto;
   overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .exp-block, .exp-block:after {
@@ -33,10 +112,10 @@ body {
   text-align: center;
 }
 .exp-block:after {
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
+  content: "";
   transform: rotateZ(45deg);
 }
 .exp-block:hover {
