@@ -21,31 +21,39 @@
       <header>
         <div class="header">
           <div class="logo">
-            <a href="http://crazyrohila.github.io/" class="logo__link" title="sanjay rohila">
+            <a href="http://crazyrohila.com/" class="logo__link" title="sanjay rohila">
               <span class="logo__text">$₹</span>
             </a>
           </div>
           <h1 class="site__name"><a href="/work">Projects</a></h1>
           <h4 class="site__desc">Some codepen demos, css/jquery experiments</h4>
-          <div class="site__name--external"><span class="external-site__links"><a class="menu__links" href="http://crazyrohila.github.io/blog">blog</a></span><span class="external-site__links"><a class="menu__links" href="http://about.me/crazyrohila">me ?</a></span></div>
+          <div class="site__name--external"><span class="external-site__links"><a class="menu__links" href="http://crazyrohila.com/blog">blog</a></span><span class="external-site__links"><a class="menu__links" href="http://about.me/crazyrohila">me ?</a></span></div>
         </div>
       </header>
-      <section id="main-content" class="main-content">
-        <ul class="projects">
-          <li id="css8bitartbox" class="exp-block external">
+      <main id="main-content" class="main-content">
+        <ul class="section section--demos section--codepen">
+          <li id="css8bitartbox" class="exp-block external codepen" data-tags="fun">
             <a href="http://codepen.io/crazyrohila/full/igskr">css 8 bit art paint box</a>
           </li>
-          <li id="random-gravatar" class="exp-block">
-            <a href="/work/random-gravatar">Choose avatar randomly</a>
-          </li>
-          <li id="css3spinner" class="exp-block external">
+          <li id="css3spinner" class="exp-block external codepen" data-tags="scss mixin">
             <a href="http://codepen.io/crazyrohila/full/Ekmvz">css3 loading spinner</a>
           </li>
-          <li id="css3buttons" class="exp-block external">
-            <a href="http://codepen.io/crazyrohila/full/mvoEB">css3 buttons</a>
+          <li id="css3buttons" class="exp-block external codepen" data-tags="scss mixin">
+            <a href="http://codepen.io/crazyrohila/full/mvoEB">3D css3 buttons</a>
           </li>
-          <li id="css3processbars" class="exp-block external">
+          <li id="css3processbars" class="exp-block external codepen" data-tags="css animation">
             <a href="http://codepen.io/crazyrohila/pen/vrEjo">css3 process bars</a>
+          </li>
+          <li id="css3arrows" class="exp-block external codepen" data-tags="scss mixin">
+            <a href="http://codepen.io/crazyrohila/full/iwDFm">css3 arrows</a>
+          </li>
+          <li id="cssdiaframa" class="exp-block external codepen" data-tags="css animation, box-shadow">
+            <a href="http://codepen.io/crazyrohila/full/hDmEo">css3 diaframa</a>
+          </li>
+        </ul>
+        <ul class="section section--projects section--other">
+          <li id="random-gravatar" class="exp-block">
+            <a href="/work/random-gravatar">Choose avatar randomly</a>
           </li>
           <li id="resizetocover" class="exp-block">
             <a href="/work/resizetocover">resize to cover</a>
@@ -56,11 +64,33 @@
           <li id="css3patterns" class="exp-block">
             <a href="/work/css3patterns">css3 linear-gradient</a>
           </li>
-          <li id="css3arrows" class="exp-block external">
-            <a href="http://codepen.io/crazyrohila/full/iwDFm">css3 arrows</a>
+        </ul>
+        <ul class="section section--gists section--snippet">
+          <li id="spinnermixin" class="exp-block external gist">
+            <a href="https://gist.github.com/crazyrohila/7821304">css loading spinner sass mixin</a>
+          </li>
+          <li id="buttonsmixin" class="exp-block external gist">
+            <a href="https://gist.github.com/crazyrohila/7821242">css3 buttons sass mixin</a>
+          </li>
+          <li id="deplyscript" class="exp-block external gist">
+            <a href="https://gist.github.com/crazyrohila/6228762">git deploy script</a>
+          </li>
+          <li id="dbsyncscript" class="exp-block external gist">
+            <a href="https://gist.github.com/crazyrohila/6157902">drupal database sync script (from server to local)</a>
           </li>
         </ul>
-      </section>
+        <ul class="section section--demos section--jsfiddle">
+          <li id="background-opacity" class="exp-block external jsfiddle">
+            <a href="http://jsfiddle.net/crazyrohila/tczsC/">background-opacity</a>
+          </li>
+          <li id="cssselectors" class="exp-block external jsfiddle">
+            <a href="http://jsfiddle.net/crazyrohila/FDeVh/">few selectors</a>
+          </li>
+          <li id="backgroundclip" class="exp-block external jsfiddle">
+            <a href="http://jsfiddle.net/crazyrohila/FUPXq/">background-clip example</a>
+          </li>
+        </ul>
+      </main>
       <div class="footer">
         <ul class="menu menu--social">
           <li class="menu__item">
