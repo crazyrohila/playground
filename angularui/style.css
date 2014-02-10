@@ -1,0 +1,90 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.left-sidebar, .right-sidebar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.left-sidebar {
+  width: 25%;
+  left: 0;
+}
+.right-sidebar {
+  width: 75%;
+  right: 0;
+}
+.right-sidebar input {
+  position: absolute;
+  left: 15%;
+  top: 20px;
+  width: 400px;
+  max-width: 100%;
+  z-index: 10;
+  height: 40px;
+  outline: 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 1px 1px 5px 3px #333;
+}
+.right-sidebar .dropdown-menu {
+  list-style: none;
+  position: absolute;
+  left: 15%;
+  top: 60px;
+  width: 400px;
+  max-width: 100%;
+  z-index: 10;
+  outline: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 10px;
+  background: #fff;
+}
+.map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.markers-title {
+  color: indianred;
+  padding: 5px 3%;
+  font-size: 20px;
+}
+.markers-list {
+  list-style: none;
+  color: indianred;
+  padding: 5px 10%;
+}
+
+.zoom-message {
+  padding: 5px 10%;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    overflow: auto;
+  }
+  .left-sidebar, .right-sidebar {
+    position: static;
+    float: right;
+    width: 100%;
+    height: auto;
+  }
+}
