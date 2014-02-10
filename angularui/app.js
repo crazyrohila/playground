@@ -37,14 +37,11 @@ xApp.controller('MapCtrl', function ($scope, $http) {
   };
 
   $scope.addmark = function($event, $params) {
-    return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
-      params: {
-        address: $scope.asyncSelected,
-        sensor: false
-      }
-    }).then(function(res) {
+    var geocoder = new google.maps.Geocoder();
+    var geocoderRequest = { address: $scope.asyncSelected };
+    return geocoder.geocode(geocoderRequest, function(results, status) {
       var location = {};
-      location = res.data.results[0].geometry.location;
+      location = results[0].geometry.location;
       $scope.myMarkers.push(new google.maps.Marker({
         map: $scope.myMap,
         position: location

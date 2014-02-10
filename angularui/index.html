@@ -30,7 +30,7 @@
             Mark {{$index}}
           </a>
         </li>
-        <li ng-show="!myMarkers.length">No Markers</li>
+        <span ng-show="!myMarkers.length">No Markers</span>
       </ul>
 
       <!-- this is the confusing part. we have to point the map marker directive
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
 <script src="http://angular-ui.github.io/ui-map/assets/vendor/ui-bootstrap-tpls.min.js"></script>
 <script src="https://rawgithub.com/angular-ui/ui-utils/master/modules/event/event.js"></script>
 <script src="http://angular-ui.github.io/ui-map/dist/ui-map.min.js"></script>
