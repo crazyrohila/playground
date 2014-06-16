@@ -1,0 +1,135 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body {
+  margin: 0;
+  background-color: #008080;
+  color: #fff;
+  text-align: center;
+}
+.back-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  color: indianred;
+}
+#india {
+  fill: #008000;
+  opacity: .8;
+  stroke: #000000;
+  stroke-width: 1;
+}
+.state {
+  fill: rgba(255,255,255,0.50);
+}
+.state.hover {
+  fill: rgba(255,255,255,1);
+}
+.tooltip {
+  position: absolute;
+  background: rgba(250,250,250,0.75);
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+.tooltip p {
+  margin: 0;
+}
+.tooltip h3 {
+  margin: 5px 0;
+}
+.state-name {
+  color: #333;
+}
+</style>
+</head>
+<body>
+  <h2>Milk Production State Wise (2011-2012)<span><a class="back-link" href="../index.html">Other D3js Example</a></span></h2>
+  <div id="map"></div>
+  <script src="../bower_components/d3js/build/d3.v3.min.js"></script>
+  <script>
+    var w = 1280;
+    var h = 600;
+    var pop;
+
+    var proj = d3.geo.mercator()
+      .center([70, 22])
+      .scale(890)
+      .rotate([0, 0, 0]);
+    var path = d3.geo.path().projection(proj);
+
+    var map = d3.select("#map").append("svg:svg")
+      .attr("width", w)
+      .attr("height", h);
+
+    var india = map.append("svg:g")
+        .attr("id", "india");
+
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+      tooltip.append("div")
+        .attr("class", "state-name");
+
+    drawmap(function() {});
+
+    function getdata() {
+      d3.json("http://www.corsproxy.com/data.gov.in/node/91673/datastore/export/json", function(prod) {
+        var obj = {};
+        for (var i = prod.data.length - 1; i >= 0; i--) {
+          var id = prod.data[i][0];
+          obj[id] = {
+            state: prod.data[i][0],
+            cow: prod.data[i][3],
+            buf: prod.data[i][4],
+            goat: prod.data[i][5],
+            total: prod.data[i][6]
+          }
+        };
+        pop = obj;
+      });
+      return pop;
+    }
+    function drawmap() {
+      d3.json("states.json", function (data) {
+        india.selectAll("path")
+          .data(data.features)
+          .enter().append("path")
+          .attr("d", path)
+          .attr("class", "state")
+          .attr("title", function(d) { return d.id; })
+          .on("mouseenter", function(d) {
+            var prod = getdata();
+            d3.select(this).classed('hover', true);
+            tooltip.transition()
+              .duration(100)
+              .style("opacity", 1);
+            if (prod != undefined) {
+              $this = prod[d.id];
+              tooltip.select('.state-name')
+                .html("<h3>"+d.id+"</h3><p><b>Cow Milk:</b>"+$this.cow+"</p>"+"<p><b>Buffalo Milk:</b>"+$this.buf+"</p>"
+                  +"<p><b>Goat Milk:</b>"+$this.goat+"</p>"+"<p><b>Total Milk:</b>"+$this.total+"</p>");
+            }
+            else {
+              tooltip.select('.state-name').html("Hmmm... Data.gov.in server is slow, Please Wait.");
+            }
+          })
+          .on("mousemove", function(d) {
+            tooltip.style("left", (d3.event.pageX+5) + "px")
+              .style("top", (d3.event.pageY+5) + "px");
+          })
+          .on("mouseleave", function(d) {
+            d3.select(this).classed('hover', false);
+            tooltip.transition()
+              .duration(100)
+              .style("opacity", 0);
+          });
+      });
+    }
+
+  </script>
+</body>
+</html>
