@@ -77,7 +77,7 @@ body {
     drawmap(function() {});
 
     function getdata() {
-      d3.json("http://www.corsproxy.com/data.gov.in/node/91673/datastore/export/json", function(prod) {
+      d3.json("https://jsonp.afeld.me/?url=https%3A%2F%2Fdata.gov.in%2Fnode%2F91673%2Fdatastore%2Fexport%2Fjson", function(prod) {
         var obj = {};
         for (var i = prod.data.length - 1; i >= 0; i--) {
           var id = prod.data[i][0];
