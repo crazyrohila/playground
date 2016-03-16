@@ -1,0 +1,14 @@
+<div class="form">
+  <div class="form-item">
+    <label>{{edit.title}}</label>
+    <input type="text" ng-model="edit.data.field_name.und[0].value" />
+    {{edit.data.field_name}}
+  </div>
+  <div class="form-item">
+    <label>Name</label>
+    <textarea type="text" rows="4" cols="50" ng-model="edit.data.field_bio"></textarea>
+  </div>
+  <div class="form-item">
+    <button ng-click="edit.save(edit.data)">Save</button>
+  </div>
+</div>

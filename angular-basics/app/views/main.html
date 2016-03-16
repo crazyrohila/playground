@@ -1,0 +1,19 @@
+<h2>Main.html</h2>
+<div class="row marketing">
+  <ul class="list">
+    <li class="list-item" ng-repeat="item in items">
+      {{item}}
+    </li>
+  </ul>
+  <ul>
+    <li ng-repeat="ppl in items_returns track by $index">
+      {{items_returns[$index].name}}
+      {{items_returns[$index].married}}
+    </li>
+  </ul>
+  <ul class="list">
+    <li class="list-item" ng-repeat="item in main.awesomeThings">
+      {{item}}
+    </li>
+  </ul>
+</div>
